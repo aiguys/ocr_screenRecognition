@@ -7,7 +7,7 @@
 import cv2
 import pytesseract
 
-filename = './image/eng_box.jpg'
+filename = '../data/eng_box.jpg'
 
 # read the image and get the dimensions
 img = cv2.imread(filename)

@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 
 # Step1. 转换为HSV颜色空间
-img = cv2.imread('./image/ui.jpg')
+img = cv2.imread('../data/ui.jpg')
 hsv_image = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 mask = np.zeros(img.shape, np.uint8)
 

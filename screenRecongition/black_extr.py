@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 
 # Step1.
-img = cv2.imread('./image/ui.jpg')
+img = cv2.imread('../data/ui.jpg')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 line = np.zeros(img.shape, np.uint8)
 #cv2.imshow('gray', gray)

@@ -6,13 +6,13 @@
 
 import cv2
 import numpy as np
-import black_extr
+from screenRecongition import black_extr
 import datetime
 
 starttime = datetime.datetime.now()
 
 # Step1. 转换为HSV
-img = cv2.imread('./image/ui.jpg')
+img = cv2.imread('../data/ui.jpg')
 hue_image = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 back = np.zeros(img.shape, np.uint8)
 white_backg = np.ones(img.shape, np.uint8) * 255
