@@ -19,7 +19,7 @@ mask = cv2.inRange(hue_image, green_low_range, green_high_range)
 kernel_ell = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
 kernel_rect = cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
 mask_opening = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel_ell)
-#cv2.imshow('mask_opening', mask_opening)
+cv2.imshow('mask_opening', mask_opening)
 
 l_cil = []
 l_rect = []
