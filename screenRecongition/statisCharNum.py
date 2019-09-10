@@ -8,7 +8,7 @@ import os
 import collections
 import cv2
 
-root = "C:\\Users\weiz\Desktop\\trainBinaryMap"
+root = "C:\\Users\weiz\Desktop\\trainBinaryMapYes\src"
 
 def findjpg(path):
     """Finding the *.txt file in specify path
@@ -56,11 +56,12 @@ def other2tif(pathList):
         filepath = filepath + '\\' + filename
         cv2.imwrite(filepath, img)
 
-if os.path.isdir(root):
-    ret = []
-    ret = findjpg(root)
-    print(statisticCharNum(ret))
-    other2tif(ret)
-else:
-    print("This path does not exist!")
+if __name__ == '__main__':
+    if os.path.isdir(root):
+        ret = []
+        ret = findjpg(root)
+        print(statisticCharNum(ret))
+        #other2tif(ret)
+    else:
+        print("This path does not exist!")
 

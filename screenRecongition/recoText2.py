@@ -10,8 +10,8 @@ from pytesseract import Output
 
 filename = '../data/00102A.jpg'
 img = cv2.imread(filename)
-d = pytesseract.image_to_data(img, output_type=Output.DICT)
-#print(len(d['top']))
+d = pytesseract.image_to_data(img, output_type=Output.DICT, lang='hwsoft')
+print((d['text'][-1]))
 
 for i in range(len(d['top'])):
     (x, y, w, h) = (d['left'][i], d['top'][i], d['width'][i], d['height'][i])
