@@ -1,0 +1,60 @@
+1. wget + url地址+其中的某一文件：从url中下载某文件到pwd所在的地址
+2. pwd查询当前地址
+3. ls, dir查询目录下的文件
+./表示当前地址，../表示当前地址退一级的地址，~/表示/home/jxiao/下的地址
+4. windows系统与linux子系统的文件共享：  使用命令”cd /mnt/e "，进入到 e盘根目录下。
+通过文件资源管理器访问Linux子系统文件：explorer.exe .
+5. cd ..返回上一级；cd 返回主目录；cd / 返回根目录；
+6. 执行某一文件 sudo sh cuda_10.1.243_418.87.00_linux.run
+7. 删除文件 sudo rm -r 文件夹名
+8. 如果当前bash显示你的用户不是root的话，sudo -s 后输入密码就变成了root    exit退出
+9. sudo apt-get install tesseract-ocr libtesseract-dev libleptonica-dev 
+使用linux下的 apt-get指令安装
+10. .tar解包方法：tar -xf CompressedFile.tar -C ./，其中-C后面指定解包路径； 打包方法：tar -cf CompressedFile.tar test.file。
+tar.gz解包方法：tar -zxf CompressedFile.tar.gz -C ./，其中-C后面指定解压路径；压缩方
+
+su root进入root，exit切回
+
+
+
+conda命令找不到，即需要添加下载的anaconda环境变量解决方法：
+在终端中将anaconda的bin目录加入PATH，根据版本和自己安装的anaconda路径不同，
+确定不同的anaconda路径的名字。
+（输入命令：）echo 'export PATH="~/anaconda3/bin:$PATH"'>>~/.bashrc
+更新bashrc,（输入命令：）source ~/.bashrc
+
+RuntimeError: Failed to init API, possibly an invalid tessdata path: /usr/local/share/tessdata/
+环境变量的配置说明方法：1）当次登录有效：export TESSDATA_PREFIX=/home/jxiao/tesseract/tessdata   echo XXX（变量名）
+2）对本用户永久有效，vim ~/.bashrc 在本文下方加入export指令，source ~/.bashrc刷新配置
+
+sh文件有时候需要chmod +x helloword.sh进行授权访问
+
+4.  安装tensorflowGPU版
+
+通过使用以下命令来安装anaconda：
+wget https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
+
+然后运行：
+sh Anaconda3-5.0.1-Linux-x86_64.sh
+一路yes下来即可，最后的vs安装，若有需求便安装，记得加入环境变量。
+然后更新系统环境：source ~/.bashrc
+在anaconda中，默认python版本为3.6，且有pip安装工具。
+执行以下命令：pip install tensorflow-gpu==1.5.0
+完成tensorflow安装。
+
+安装tesserocr：https://www.cnblogs.com/zhyantao/p/10424744.html
+（或者在环境包都安装没问题后pip install tesserocr）
+以及sudo apt-get install  libxml2-dev libxslt1-dev zlib1g-dev
+在环境支持都安装以及更新完之后 sudo pip install tesserocr即可
+其他参考：tesserocr官网 https://link.zhihu.com/?target=https%3A//pypi.python.org/pypi/tesserocr
+
+安装openCV库时，import提示的共享库缺失错误：
+https://blog.csdn.net/yjk13703623757/article/details/93673927
+
+error while loading shared libraries: liblept.so.5: cannot open shared object file: No such file or directory
+# ll /usr/local/lib/liblept.so.5  可以发现这个文件是存在的，在/etc/ld.so.conf文件中
+添加”/usr/local/lib“这行（vim指令，root下‘i’进入编辑模式，esc+：进入保存模型输入wq!保存并覆盖）
+
+增加git clone速度的方法：
+github.global.ssl.fastly.Net 31.13.72.34 或31.13.85.1
+github.com 13.229.188.59
