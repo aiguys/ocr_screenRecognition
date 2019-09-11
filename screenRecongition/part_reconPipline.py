@@ -137,6 +137,7 @@ def recoText(im, img):
     :return data: 字符及它们在图片的位置
     """
     data = {}
+    # 你需要有hwsoft2字符识别库
     d = pytesseract.image_to_data(im, output_type=Output.DICT, lang='hwsoft')
     for i in range(len(d['text'])):
         if 3 < len(d['text'][i]) < 8:
