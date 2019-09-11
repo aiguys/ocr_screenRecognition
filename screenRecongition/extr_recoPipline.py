@@ -52,6 +52,8 @@ def recoText(im):
             data[d['text'][i]] = ([d['left'][i], d['top'][i], d['width'][i], d['height'][i]])
             #cv2.rectangle(im, (x, y), (x + w, y + h), (255, 0, 0), 2)
             #cv2.putText(im, d['text'][i], (x, y-8), cv2.FONT_HERSHEY_SIMPLEX, 0.3, (255, 0, 0), 1)
+
+    #cv2.imshow("recoText", im)
     return data
 
 def drawMark(im, cil, rect, tdata, text):
@@ -144,7 +146,7 @@ if __name__ == '__main__':
     l_cil = l_green_cil + l_red_cil
     l_rect = l_green_rect + l_red_rect
 
-    ret = drawMark(img, l_cil, l_rect, data, "102017")
+    ret = drawMark(img, l_cil, l_rect, data, "151217") #102017
 
     e2 = cv2.getTickCount()
     time = (e2 - e1) / cv2.getTickFrequency()

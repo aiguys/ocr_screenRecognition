@@ -144,7 +144,7 @@ def recoText(im, img):
             data[d['text'][i]] = ([d['left'][i], d['top'][i], d['width'][i], d['height'][i]])
             #cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
             #cv2.putText(img, d['text'][i], (x, y-8), cv2.FONT_HERSHEY_SIMPLEX, 0.3, (255, 0, 0), 1)
-    #cv2.imshow("123", img)
+    #cv2.imshow("recoText", img)
     return data
 
 def drawMark(im, cil, rect, tdata, text):
@@ -251,7 +251,7 @@ if __name__ == '__main__':
     back = 255 - back
     back = cv2.cvtColor(back, cv2.COLOR_BGR2GRAY)
     thr_img = cv2.add(thr_img, back)
-    #thr_img = 255 - thr_img
+    thr_img = 255 - thr_img
     #cv2.imshow("thr", thr_img)
 
     #getTrainSet(thr_img, l_cil, l_rect)
@@ -260,7 +260,7 @@ if __name__ == '__main__':
     #cv2.imshow("hah1", back)
     data = recoText(thr_img, img)
 
-    ret = drawMark(img, l_cil, l_rect, data, "05111")
+    ret = drawMark(img, l_cil, l_rect, data, "05111") #05026
 
     e2 = cv2.getTickCount()
     time = (e2 - e1) / cv2.getTickFrequency()
