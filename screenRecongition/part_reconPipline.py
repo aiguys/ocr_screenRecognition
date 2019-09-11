@@ -267,6 +267,5 @@ if __name__ == '__main__':
     print(time)
 
     cv2.imshow("ret", ret)
-
     cv2.waitKey(0)
     cv2.destroyAllWindows()
