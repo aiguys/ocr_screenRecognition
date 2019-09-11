@@ -1,3 +1,10 @@
+使用工程所需要的组件说明：
+1）Tesseract4.0版 安装可以参考这篇：https://blog.csdn.net/u012384044/article/details/77979803
+2）Leptonica1.72以上版本，安装参考同上以及官方的说明文档 https://github.com/tesseract-ocr/tesseract/wiki/TrainingTesseract-4.00
+3）Anaconda3虚拟环境，python3.6 安装说明可以参考本文档之后的内容
+4）tesserocr，在安装好所依赖的包之后使用一般安装语句pip install tesserocr即可
+5）opencv-python，pip install即可
+
 1. wget + url地址+其中的某一文件：从url中下载某文件到pwd所在的地址
 2. pwd查询当前地址
 3. ls, dir查询目录下的文件
